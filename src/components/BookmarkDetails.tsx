@@ -1,29 +1,17 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
-interface Bookmark {
-  title: string;
-  url: string;
-  category: string;
-}
+function BookmarkDetails() {
+  const [bookmark, setBookmark] = useState(null);
 
-interface Params {
-  id?: string;
-}
-
-const BookmarkDetails: React.FC = () => {
-  const [bookmark, setBookmark] = useState<Bookmark | null>(null);
-
-  const { id }: Params = useParams();
+  const { id } = useParams();
 
   useEffect(() => {
     if (id) {
-      axios
-        .get<Bookmark>(`http://localhost:8080/bookmarks/${id}`)
-        .then((res) => {
-          setBookmark(res.data);
-        });
+      axios.get(`http://localhost:8080/bookmarks/${id}`).then((res) => {
+        setBookmark(res.data);
+      });
     }
   }, [id]);
 
@@ -36,7 +24,7 @@ const BookmarkDetails: React.FC = () => {
             <div className="flex flex-col bg-white p-4">
               <div>
                 <span className="font-bold">Title: </span>
-                <span>{bookmark?.title}</span>
+                <span> Facebook</span>
               </div>
               <div>
                 <span className="font-bold">URL: </span>
@@ -50,15 +38,14 @@ const BookmarkDetails: React.FC = () => {
               </div>
               <div>
                 <span className="font-bold">Category: </span>
-                <span>{bookmark?.category}</span>
+                <span> Facebook</span>
               </div>
             </div>
-            <button className="btn w-24 m-auto">Back</button>
           </div>
         </div>
       </div>
     </>
   );
-};
+}
 
 export default BookmarkDetails;
