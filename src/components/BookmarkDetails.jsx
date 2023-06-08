@@ -29,7 +29,7 @@ function BookmarkDetails() {
               <div>
                 <span className="font-bold">URL: </span>
                 <Link
-                  to={bookmark?.url ?? ""}
+                  to={bookmark?.url}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
