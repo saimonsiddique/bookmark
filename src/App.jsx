@@ -1,12 +1,16 @@
 // import logo from './logo.svg';
 // import './App.css';
 
+import BookMarkForm from "./components/BookMarkForm";
+import BookmarkDetails from "./components/BookmarkDetails";
+import CategoryCard from "./components/CategoryCard";
+
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <div>React App</div>
-      </header>
+    <div>
+      {/* <BookMarkForm /> */}
+      {/* <CategoryCard /> */}
+      {/* <BookmarkDetails /> */}
     </div>
   );
 }
