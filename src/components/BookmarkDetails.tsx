@@ -2,16 +2,28 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 
-function BookmarkDetails() {
-  const [bookmark, setBookmark] = useState(null);
+interface Bookmark {
+  title: string;
+  url: string;
+  category: string;
+}
 
-  const { id } = useParams();
+interface Params {
+  id?: string;
+}
+
+const BookmarkDetails: React.FC = () => {
+  const [bookmark, setBookmark] = useState<Bookmark | null>(null);
+
+  const { id }: Params = useParams();
 
   useEffect(() => {
     if (id) {
-      axios.get(`http://localhost:8080/bookmarks/${id}`).then((res) => {
-        setBookmark(res.data);
-      });
+      axios
+        .get<Bookmark>(`http://localhost:8080/bookmarks/${id}`)
+        .then((res) => {
+          setBookmark(res.data);
+        });
     }
   }, [id]);
 
@@ -29,11 +41,11 @@ function BookmarkDetails() {
               <div>
                 <span className="font-bold">URL: </span>
                 <Link
-                  to={bookmark.url}
+                  to={bookmark?.url ?? ""}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  {bookmark.url}
+                  {bookmark?.url}
                 </Link>
               </div>
               <div>
@@ -47,6 +59,6 @@ function BookmarkDetails() {
       </div>
     </>
   );
-}
+};
 
 export default BookmarkDetails;
