@@ -1,0 +1,10 @@
+{
+  "bookMarks": [
+    {
+      "id": 1,
+      "title": "title1",
+      "url": "http://www.baidu.com",
+      "category": "A"
+    }
+  ]
+}
