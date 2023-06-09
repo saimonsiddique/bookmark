@@ -42,8 +42,8 @@ function Bookmark() {
     <div className="flex">
       <div className="flex-[0.7] grid grid-cols-2 gap-3 m-3">
         {categories &&
-          categories.map((category) => (
-            <div>
+          categories.map((category, index) => (
+            <div key={index}>
               <div
                 key={category.name}
                 className="text-2xl mb-2 text-Black font-semibold"
@@ -57,7 +57,7 @@ function Bookmark() {
                       return (
                         <BookmarkCard key={bookmark.id} bookmark={bookmark} />
                       );
-                    }
+                    } else return null;
                   })}
               </CategoryCard>
             </div>

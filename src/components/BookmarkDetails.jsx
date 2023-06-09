@@ -24,7 +24,7 @@ function BookmarkDetails() {
             <div className="flex flex-col bg-white p-4">
               <div>
                 <span className="font-bold">Title: </span>
-                <span> Facebook</span>
+                <span>{bookmark?.title}</span>
               </div>
               <div>
                 <span className="font-bold">URL: </span>
@@ -38,7 +38,7 @@ function BookmarkDetails() {
               </div>
               <div>
                 <span className="font-bold">Category: </span>
-                <span> Facebook</span>
+                <span>{bookmark?.category}</span>
               </div>
             </div>
           </div>
