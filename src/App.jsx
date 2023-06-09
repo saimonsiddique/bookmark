@@ -1,16 +1,17 @@
+// import logo from './logo.svg';
+// import './App.css';
+
+import BookMarkForm from "./components/BookMarkForm";
 import BookmarkDetails from "./components/BookmarkDetails";
-import Bookmark from "./pages/Bookmark.page";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import CategoryCard from "./components/CategoryCard";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Bookmark />}>
-          <Route path="/:id" element={<BookmarkDetails />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <div>
+      {/* <BookMarkForm /> */}
+      {/* <CategoryCard /> */}
+      {/* <BookmarkDetails /> */}
+    </div>
   );
 }
 

@@ -1,10 +1,17 @@
 import React from "react";
 
-function CategoryCard({ children }) {
+function CategoryCard() {
   return (
     <>
-      <div className="bg-rose-300 flex flex-col gap-2 p-2 h-fit rounded-md">
-        {children}
+      <div className="card bg-base-100 shadow-md rounded-md">
+        <div className="card-body">
+          <div className="flex justify-between items-center">
+            <div className="text-xl">Facebook</div>
+            <button className="btn rounded-xl bg-rose-400 text-white">
+              Details
+            </button>
+          </div>
+        </div>
       </div>
     </>
   );

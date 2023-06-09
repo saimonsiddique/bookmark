@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 function BookmarkDetails() {
   const [bookmark, setBookmark] = useState(null);
@@ -24,7 +24,7 @@ function BookmarkDetails() {
             <div className="flex flex-col bg-white p-4">
               <div>
                 <span className="font-bold">Title: </span>
-                <span>{bookmark?.title}</span>
+                <span> Facebook</span>
               </div>
               <div>
                 <span className="font-bold">URL: </span>
@@ -38,10 +38,9 @@ function BookmarkDetails() {
               </div>
               <div>
                 <span className="font-bold">Category: </span>
-                <span>{bookmark?.category}</span>
+                <span> Facebook</span>
               </div>
             </div>
-            <button className="btn w-24 m-auto">Back</button>
           </div>
         </div>
       </div>
