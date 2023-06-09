@@ -53,6 +53,12 @@
       "url": "https://daisyui.com/",
       "category": "UI",
       "id": 9
+    },
+    {
+      "title": "AlgoExpert",
+      "url": "https://algoexpert.io/",
+      "category": "Learning",
+      "id": 10
     }
   ],
   "categories": [
@@ -75,6 +81,10 @@
     {
       "name": "UI",
       "id": 5
+    },
+    {
+      "name": "Learning",
+      "id": 6
     }
   ]
 }
